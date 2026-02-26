@@ -1,4 +1,4 @@
-import Logo from '../assets/img/logo/logo.png';
+import Logo from '../assets/img/logo/logo2.png';
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -29,18 +29,18 @@ export function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "navbar-scrolled py-3" : "bg-transparent py-5"
+        scrolled ? "navbar-scrolled py-2" : "bg-transparent py-4"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-24 h-24 sm:w-20 sm:h-20 transition-transform duration-300 group-hover:scale-110">
+          <Link to="/" className="flex items-center group">
+            <div className="h-16 lg:h-20 flex items-center transition-transform duration-300 group-hover:scale-105">
               <img
                 src={Logo}
                 alt="Logo APS"
-                className="w-full h-full object-contain"
+                className="h-full w-auto object-contain"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
                   target.style.display = "none";
@@ -52,7 +52,6 @@ export function Navbar() {
                 }}
               />
             </div>
-            <div className="hidden sm:block"></div>
           </Link>
 
           {/* Desktop Navigation */}
