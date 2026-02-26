@@ -1,3 +1,4 @@
+import Logo from "../assets/img/logo/logo2.png";
 import { useState, useEffect } from "react";
 
 export function SplashScreen({ onFinish }: { onFinish: () => void }) {
@@ -43,15 +44,12 @@ export function SplashScreen({ onFinish }: { onFinish: () => void }) {
       {/* Content */}
       <div className="relative flex flex-col items-center px-6">
         {/* Logo */}
-        <div
-          className={`mb-6 splash-fade-up`}
-          style={{ animationDelay: "0.1s" }}
-        >
-          <div className="w-24 h-24 rounded-full bg-navy border border-white/[0.08] flex items-center justify-center shadow-lg">
+        <div className="mb-8 splash-fade-up" style={{ animationDelay: "0.1s" }}>
+          <div className="w-40 h-40 md:w-48 md:h-48 rounded-full bg-navy border border-white/[0.08] flex items-center justify-center shadow-2xl">
             <img
-              src="assets/img/logo/logo.png"
+              src={Logo}
               alt="APS Logo"
-              className="w-14 h-14 object-contain"
+              className="w-28 md:w-32 h-auto object-contain"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
                 target.style.display = "none";
@@ -59,12 +57,11 @@ export function SplashScreen({ onFinish }: { onFinish: () => void }) {
                 if (fallback) fallback.style.display = "flex";
               }}
             />
-            <div className="w-14 h-14 hidden items-center justify-center">
-              <span className="text-2xl font-bold text-accent">APS</span>
+            <div className="hidden items-center justify-center">
+              <span className="text-3xl font-bold text-accent">APS</span>
             </div>
           </div>
         </div>
-
         {/* Company Name */}
         <h1
           className="text-white text-xl md:text-2xl font-semibold tracking-wide mb-1 splash-fade-up"
